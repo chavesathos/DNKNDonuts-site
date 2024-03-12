@@ -1,0 +1,669 @@
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-family: 'mario';
+}
+
+.header .wrapper-topo {
+  width: 750px;
+  padding: 20px;
+  margin-top: 40px;
+  background-color: #fff;
+  border: solid 4px #199BD9;
+  box-shadow: 3px 3px #FCCf2F, 1px 0 0.4em #060606;
+  opacity: 80%;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 30px;
+  position: relative;
+}
+
+.header .wrapper-topo .coluna {
+  display: block;
+  text-align: center;
+}
+
+.header .wrapper-topo .coluna .titulo {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  color: #199BD9;
+}
+
+.header .wrapper-topo .coluna-nome-jogador {
+  width: 260px;
+}
+
+.header .wrapper-topo .img-headerGame {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -40px;
+  margin: 0 auto;
+}
+
+.header .wrapper-topo .placar {
+  display: flex;
+  gap: 10px;
+}
+
+.header .wrapper-topo .placar .coluna {
+  display: block;
+  font-size: 18px;
+  font-weight: bold;
+  color: #199BD9;
+}
+
+@keyframes mover-elementos {
+  from {
+    right: -130px;
+  }
+  to {
+    right: 100%;
+  }
+}
+
+@keyframes clouds-animation {
+  from {
+    right: -500px;
+  }
+  to {
+    right: 100%;
+  }
+}
+
+@keyframes jump-mario {
+  0% {
+    bottom: 0;
+  }
+  40% {
+    bottom: 180px;
+  }
+  50% {
+    bottom: 180px;
+  }
+  60% {
+    bottom: 180px;
+  }
+  100% {
+    bottom: 0;
+  }
+}
+
+@keyframes fly-mario {
+  0% {
+    bottom: 0;
+    left: 0;
+  }
+  15% {
+    bottom: 20%;
+    left: 50px;
+  }
+  30% {
+    bottom: calc(100% - 180px);
+    left: 150px;
+  }
+  50% {
+    bottom: calc(100% - 180px);
+    left: 250px;
+  }
+  70% {
+    bottom: calc(100% - 180px);
+    left: 250px;
+  }
+  80% {
+    bottom: 20%;
+    left: 50px;
+  }
+  100% {
+    bottom: 0;
+    left: 0;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    transform: translate(0px, -200px);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0px, 0px);
+    opacity: 1;
+  }
+}
+
+@keyframes pulsar-animate {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0.9);
+  }
+}
+
+@keyframes egg-animation {
+  from {
+    right: -300px;
+  }
+  to {
+    right: 100%;
+  }
+}
+
+@keyframes mover-elementos {
+  from {
+    right: -130px;
+  }
+  to {
+    right: 100%;
+  }
+}
+
+@keyframes clouds-animation {
+  from {
+    right: -500px;
+  }
+  to {
+    right: 100%;
+  }
+}
+
+@keyframes jump-mario {
+  0% {
+    bottom: 0;
+  }
+  40% {
+    bottom: 180px;
+  }
+  50% {
+    bottom: 180px;
+  }
+  60% {
+    bottom: 180px;
+  }
+  100% {
+    bottom: 0;
+  }
+}
+
+@keyframes fly-mario {
+  0% {
+    bottom: 0;
+    left: 0;
+  }
+  15% {
+    bottom: 20%;
+    left: 50px;
+  }
+  30% {
+    bottom: calc(100% - 180px);
+    left: 150px;
+  }
+  50% {
+    bottom: calc(100% - 180px);
+    left: 250px;
+  }
+  70% {
+    bottom: calc(100% - 180px);
+    left: 250px;
+  }
+  80% {
+    bottom: 20%;
+    left: 50px;
+  }
+  100% {
+    bottom: 0;
+    left: 0;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    transform: translate(0px, -200px);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0px, 0px);
+    opacity: 1;
+  }
+}
+
+@keyframes pulsar-animate {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0.9);
+  }
+}
+
+@keyframes egg-animation {
+  from {
+    right: -300px;
+  }
+  to {
+    right: 100%;
+  }
+}
+
+* {
+  font-family: 'mario';
+}
+
+.modal {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+}
+
+.modal.habilitar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.modal .modal-login {
+  width: 650px;
+  min-height: 400px;
+  max-height: 500px;
+  background-image: url("../assets/background.jpg");
+  background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 2px 2px 20px #FCCf2F;
+  padding: 50px;
+  border-radius: 30px;
+  display: none;
+  position: relative;
+}
+
+.modal .modal-login.active {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: fade-up 1s forwards;
+}
+
+.modal .modal-login .titulo {
+  font-size: 36px;
+  text-align: center;
+  margin: 20px 0px;
+  -webkit-text-stroke: 3px black;
+}
+
+.modal .modal-login .input-jogador {
+  width: 350px;
+  height: 50px;
+  border: solid 3px #199BD9;
+  border-radius: 10px;
+  padding: 15px;
+  font-size: 18px;
+  outline: none;
+}
+
+.modal .modal-login .regras {
+  text-align: center;
+  font-size: 14px;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.modal .modal-game-over {
+  display: none;
+}
+
+.modal .modal-game-over.active {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: fade-up 1s forwards;
+}
+
+.modal .modal-ranking {
+  width: 650px;
+  min-height: 500px;
+  max-height: 85%;
+  background-image: linear-gradient(#199BD9, #e2e2e2);
+  background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 2px 2px 20px #199BD9;
+  padding: 50px;
+  border-radius: 30px;
+  display: none;
+}
+
+.modal .modal-ranking.active {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: fade-up 1s forwards;
+}
+
+.modal .modal-ranking .titulo {
+  font-size: 36px;
+  text-align: center;
+  margin: 20px 0px;
+  color: #0da831;
+  -webkit-text-stroke: 3px black;
+}
+
+.modal .modal-ranking .wrapper-tabela {
+  max-height: 500px;
+  overflow-y: scroll;
+}
+
+.modal .modal-ranking .wrapper-tabela::-webkit-scrollbar {
+  width: 10px;
+}
+
+.modal .modal-ranking .wrapper-tabela::-webkit-scrollbar-thumb {
+  background: #199BD9;
+  border-left: 2px solid rgba(255, 255, 255, 0.3);
+  border-right: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+}
+
+.modal .modal-ranking .wrapper-tabela::-webkit-scrollbar-track {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+}
+
+.modal .modal-ranking .tabela-ranking {
+  text-align: center;
+  color: white;
+  -webkit-text-stroke: 2px black;
+  border-radius: 10px;
+}
+
+.modal .modal-ranking .tabela-ranking td {
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.modal .modal-ranking .regra-pontuacao {
+  color: black;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.modal .btn-modal {
+  background: none;
+  border: none;
+  width: 300px;
+  height: 70px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-content: flex-end;
+  background-color: #bd827c;
+  text-transform: uppercase;
+  padding: 15px;
+  margin: 30px 0px;
+  font-size: 34px;
+  font-weight: 600;
+  color: #fff;
+  transition: 1s;
+}
+
+.modal .btn-red-tr:not(:disabled) {
+  cursor: pointer;
+  background-color: #E62319;
+}
+
+.modal .btn-red-tr:not(:disabled)::before {
+  position: absolute;
+  content: "";
+  border-top: 5px solid #e93930;
+  border-left: 5px solid #e93930;
+  border-right: 5px solid #cf2017;
+  border-bottom: 5px solid #cf2017;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  transition: 0.5s;
+}
+
+.modal .btn-red-tr:not(:disabled):hover {
+  box-shadow: 7px 7px #8a150f, -7px -7px #f07b75;
+}
+
+.modal .btn-red-tr:not(:disabled):hover::before {
+  border: 0px;
+}
+
+@font-face {
+  font-family: 'mario';
+  src: url("../font/SuperMario256.ttf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.cenario {
+  position: relative;
+  margin: 1% auto;
+  overflow: hidden;
+  width: 80%;
+  height: 100vh;
+  background-image: linear-gradient(#87CEEB, #E0F6FF);
+  border-bottom: 15px solid #23a023;
+}
+
+.cenario.start .img-clouds {
+  animation: clouds-animation 20s infinite linear;
+}
+
+.cenario.start .img-clouds2 {
+  animation: clouds-animation 20s infinite linear 9s;
+}
+
+.cenario.start .img-clouds3 {
+  animation: clouds-animation 20s infinite linear 13s;
+}
+
+.cenario.start .img-coin {
+  animation: mover-elementos 7s infinite linear;
+}
+
+.cenario.start .img-coin2 {
+  animation: mover-elementos 7s infinite linear 5s;
+}
+
+.cenario.start .img-coin3 {
+  animation: mover-elementos 7s infinite linear 1s;
+}
+
+.cenario.start .img-star {
+  animation: mover-elementos 11s infinite linear;
+}
+
+.cenario.start .img-star2 {
+  animation: mover-elementos 11s infinite linear 8s;
+}
+
+.cenario .sleep {
+  width: 80%;
+  height: 100vh;
+  margin: 1% auto;
+  overflow: hidden;
+  display: none;
+}
+
+.cenario .sleep.active {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  animation: fade-up .5s forwards;
+}
+
+.cenario .sleep .contagem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15%;
+  width: 150px;
+  height: 150px;
+  background-color: white;
+  border-radius: 50%;
+  border: solid 10px #E62319;
+  box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.8);
+  font-size: 55px;
+  animation: pulsar-animate 1s infinite;
+}
+
+.cenario .sleep .regras-jogo {
+  margin-top: 50px;
+  width: 700px;
+  background-color: white;
+  box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.8);
+  padding: 10px;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+}
+
+.cenario .sleep .regras-jogo img {
+  display: block;
+  width: 100px;
+}
+
+.cenario .sleep .regras-jogo .bloco-regras {
+  display: grid;
+  grid-template-rows: auto;
+  gap: 10px;
+  width: 100%;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+  font-size: 14px;
+  border-radius: 5px;
+  background-color: #f3f3f3;
+  color: black;
+}
+
+.cenario .img-clouds {
+  position: absolute;
+  width: 450px;
+  top: 200px;
+  right: -500px;
+}
+
+.cenario .img-clouds2 {
+  position: absolute;
+  width: 300px;
+  top: 300px;
+  right: -500px;
+}
+
+.cenario .img-clouds3 {
+  position: absolute;
+  width: 200px;
+  top: 30px;
+  right: -500px;
+}
+
+.cenario .img-mario {
+  width: 150px;
+  position: absolute;
+  bottom: 0;
+}
+
+.cenario .img-bullet {
+  position: absolute;
+  width: 200px;
+  bottom: 100px;
+  right: -200px;
+}
+
+.cenario .img-pipe {
+  position: absolute;
+  bottom: 0;
+  right: -90px;
+  width: 80px;
+}
+
+.cenario .img-coin {
+  width: 130px;
+  position: absolute;
+  bottom: 170px;
+  right: -130px;
+}
+
+.cenario .img-star {
+  width: 140px;
+  position: absolute;
+  top: 80px;
+  right: -130px;
+}
+
+.cenario .img-egg {
+  width: 100px;
+  position: absolute;
+  bottom: -14px;
+  margin-bottom: 0;
+  right: -130px;
+  display: none;
+}
+
+.cenario .img-yoshi {
+  width: 150px;
+  position: absolute;
+  bottom: 0;
+  display: none;
+}
+
+.cenario .img-atack {
+  width: 240px;
+  position: absolute;
+  bottom: 0;
+  display: none;
+}
+
+.cenario .jump {
+  animation: jump-mario 500ms ease-out;
+}
+
+.cenario .fly {
+  animation: fly-mario 1.5s ease-out;
+}
+
+.cenario .abaixar {
+  width: 80px;
+  left: 50px;
+}
+
+.azul {
+  color: #199BD9;
+}
+
+.amarelo {
+  color: #FCCf2F;
+}
+
+.vermelho {
+  color: #E62319;
+}
+
+.verde {
+  color: #44AF35;
+}
