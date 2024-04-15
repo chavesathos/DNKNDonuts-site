@@ -1,48 +1,106 @@
-main {
-    flex: 1;
+#page-landing {
+    text-align: center;
+    min-height: 100vh;
+  
+    display: flex;
+  }
+  
+  #container {
+    margin: auto;
+    width: min(90%, 112rem);
+  }
 
+  #logo {
+    width: 400px;
+    height: auto;
+  }
+
+  .location,
+  h1,
+  .visit p {
+    height: 16vh;
+  }
+  
+  .location {
+    animation-delay: 100ms;
+  }
+  
+  main h1 {
+    color: var(--text);
+    animation-delay: 150ms;
+    font-size: 5.5rem;
+    margin-bottom: 20px;
+  }
+  .visit a img {
+    width: 80px;
+    height: 80px;
+  }
+
+  
+  .visit a {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+  
+    margin: auto;
 
-    width: 100%;
-    max-width: 1440px;
-}
+    animation-delay: 250ms;
+  }
 
-.main-info {
-    width: 100%;
-    max-width: 570px;
-}
+  /*falta ajustar a escala do botão*/
+  .visit a:hover {
+    transform: scale(200px);
+  }
 
-.main-info p {
-    font-size: 18px;
-    margin: 20px 0 28px;
-}
-
-.main-info div {
-    display: flex;
-    column-gap: 32px;
-}
-
-.main-info div a, .main-info div .button {
-    width: 100%;
-    padding: 10px 0;
-    border-radius: 3px;
-
-    font-size: 16px;
-    font-weight: 600;
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 0.3px;
-
-    transform: skew(-10deg);
-}
-
-.main-info div a {
-    background: var(--red);
-}
-
-.main-info div .button {
-    background: transparent;
-    border: 1px solid var(--green);
-}
+  /*desktop version*/
+@media (min-width: 760px) {
+    #container {
+      padding: 5rem 2rem;
+      
+      background: url("../images/bg.svg") no-repeat 80% /
+        clamp(30rem, 54vw, 56rem);
+    }
+  
+    .main {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  
+    .location,
+    h1,
+    .visit p {
+      height: initial;
+      text-align: initial;
+    }
+    .location {
+      text-align: right;
+      font-size: 2.4rem;
+      line-height: 1.5;
+    }
+    main h1 {
+      font-weight: bold;
+      line-height: 0.88;
+  
+      margin: clamp(10%, 9vh, 12%) 0 4rem;
+  
+      width: min(300px, 80%);
+    }
+  
+    .visit {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  
+    .visit p {
+      font-size: 2.4rem;
+      line-height: 1.5;
+      width: clamp(20rem, 20vw, 30rem);
+    }
+  
+    .visit a {
+      margin: initial;
+    }
+  }
+  

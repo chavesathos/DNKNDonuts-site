@@ -1,0 +1,552 @@
+<!--npm run dev - para iniciar o projeto com node.js--> 
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>DNKN Café com Donuts</title>
+<link rel="icon" type="image/x-icon" href="./assets/logo-dnkn.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Madimi+One&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"/>
+
+<link rel="stylesheet" href="./styles/output.css">
+<link rel="stylesheet" href="./styles/tailwind.css">
+</head>
+
+<body>
+<header class="w-full h-[420px] bg-zinc-900 bg-home bg-cover bg-center">
+<div class="w-full h-full flex flex-col justify-center items-center">
+  <img 
+    src="./assets/logo-dnkn.png" 
+    alt="Logo Donuts"
+    class="w-48 h-48 hover:scale-110 duration-200" 
+    />
+    <h1 class="text-4xl mt-4 mb-2 font-bold text-white">DNKN - Café com Donuts</h1>
+    
+    <span class="text-white font-medium">
+    Rua dev 10, Coronel Fabriciano - MG
+  </span>
+
+  <div class="bg-green-600 px-4 py-1 rounded-lg mt-5" id="date-span">
+    <span class="text-white font-medium">
+      Seg à Dom - 18:00 às 22:00
+    </span>
+  </div>
+  </div>
+</header>
+
+<h2 class="text-2xl md:text-3xl font-bold text-center mt-9 mb-6">
+Conheça nosso Cardápio
+</h2>
+
+<!--Inicio do cardápio-->
+<div id="menu">
+
+<main class="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-10 mx-auto max-w-7xl px-2 mb-16">
+  <!--PRODUTO ITEM-->
+  <div class="flex gap-2">
+    <img 
+      src="./assets/3.jpg" 
+      alt="Double Donuts"
+      class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+    />
+
+    <div>
+      <p class="font-bold">Double Donuts</p>
+      <p class="text-sm">Massa de fermentação natural de cenoura com chocolate.</p>
+      
+      <div class="flex items-center gap-2 justify-between mt-3">
+        <p class="font-bold text-lg">R$ 8.90</p>
+        <button 
+          class="bg-gray-900 px-5 rounded add-to-cart-btn"
+          data-name="Double Donuts"
+          data-price="8.90"
+        >
+          <i class="fa fa-cart-plus text-lg text-white"></i>
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!--PRODUTO ITEM-->
+  <div class="flex gap-2">
+    <img 
+      src="./assets/1.jpg" 
+      alt="Donuts Smash"
+      class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+    />
+
+    <div>
+      <p class="font-bold">Donuts Smash</p>
+      <p class="text-sm">Massa de fermentação natural com castanhas e noses.</p>
+      
+      <div class="flex items-center gap-2 justify-between mt-3">
+        <p class="font-bold text-lg">R$ 3.90</p>
+        <button 
+          class="bg-gray-900 px-5 rounded add-to-cart-btn"
+          data-name="Donuts Smash"
+          data-price="3.90"
+        >
+          <i class="fa fa-cart-plus text-lg text-white"></i>
+        </button>
+      </div>
+
+    </div>
+    
+  </div>
+
+    <!--PRODUTO ITEM-->
+    <div class="flex gap-2">
+    <img 
+      src="./assets/2.jpg" 
+      alt="Double Donuts Chocolate"
+      class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+    />
+
+    <div>
+      <p class="font-bold">Double Donuts Chocolate</p>
+      <p class="text-sm">Massa de fermentação natural com muito chocolate.</p>
+      
+      <div class="flex items-center gap-2 justify-between mt-3">
+        <p class="font-bold text-lg">R$ 9.90</p>
+        <button 
+          class="bg-gray-900 px-5 rounded add-to-cart-btn"
+          data-name="Double Donuts Chocolate"
+          data-price="9.90"
+        >
+          <i class="fa fa-cart-plus text-lg text-white"></i>
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+
+    <!--PRODUTO ITEM-->
+    <div class="flex gap-2">
+    <img 
+      src="./assets/4.jpg" 
+      alt="Morango Donuts"
+      class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+    />
+
+    <div>
+      <p class="font-bold">Morango Donuts</p>
+      <p class="text-sm">Massa de fermentação natural de coco com morango.</p>
+      
+      <div class="flex items-center gap-2 justify-between mt-3">
+        <p class="font-bold text-lg">R$ 3.90</p>
+        <button 
+          class="bg-gray-900 px-5 rounded add-to-cart-btn"
+          data-name="Donuts Morango"
+          data-price="3.90"
+        >
+          <i class="fa fa-cart-plus text-lg text-white"></i>
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+
+    <!--PRODUTO ITEM-->
+    <div class="flex gap-2">
+    <img 
+      src="./assets/5.jpg" 
+      alt="Caramelo Donuts"
+      class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+    />
+
+    <div>
+      <p class="font-bold">Caramelo Donuts</p>
+      <p class="text-sm">Massa de fermentação natural de caramelo salgado.</p>
+      
+      <div class="flex items-center gap-2 justify-between mt-3">
+        <p class="font-bold text-lg">R$ 4.90</p>
+        <button 
+          class="bg-gray-900 px-5 rounded add-to-cart-btn"
+          data-name="Donuts Caramelo"
+          data-price="4.90"
+        >
+          <i class="fa fa-cart-plus text-lg text-white"></i>
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+
+    <!--PRODUTO ITEM-->
+    <div class="flex gap-2">
+    <img 
+      src="./assets/6.jpg" 
+      alt="Double Morango Donuts"
+      class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+    />
+
+    <div>
+      <p class="font-bold">Double Morango Donuts</p>
+      <p class="text-sm">Massa de fermentação natural de coco com morango.</p>
+      
+      <div class="flex items-center gap-2 justify-between mt-3">
+        <p class="font-bold text-lg">R$ 9.90</p>
+        <button 
+          class="bg-gray-900 px-5 rounded add-to-cart-btn"
+          data-name="Double Donuts Morango"
+          data-price="9.90"
+        >
+          <i class="fa fa-cart-plus text-lg text-white"></i>
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+
+    <!--PRODUTO ITEM-->
+    <div class="flex gap-2">
+    <img 
+      src="./assets/7.jpg" 
+      alt="Donuts Doce de Leite"
+      class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+    />
+
+    <div>
+      <p class="font-bold">Donuts Doce de leite</p>
+      <p class="text-sm">Massa de fermentação natural de doce de leite.</p>
+      
+      <div class="flex items-center gap-2 justify-between mt-3">
+        <p class="font-bold text-lg">R$ 3.90</p>
+        <button 
+          class="bg-gray-900 px-5 rounded add-to-cart-btn"
+          data-name="Donuts MDoce de leite"
+          data-price="3.90"
+        >
+          <i class="fa fa-cart-plus text-lg text-white"></i>
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+
+    <!--PRODUTO ITEM-->
+    <div class="flex gap-2">
+    <img 
+      src="./assets/8.jpg" 
+      alt="Donuts Coco com Chocolate"
+      class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+    />
+
+    <div>
+      <p class="font-bold">Donuts Coco com Chocolate</p>
+      <p class="text-sm">Massa de fermentação natural de coco com chocolate.</p>
+      
+      <div class="flex items-center gap-2 justify-between mt-3">
+        <p class="font-bold text-lg">R$ 3.90</p>
+        <button 
+          class="bg-gray-900 px-5 rounded add-to-cart-btn"
+          data-name="Donuts Coco com Chocolate"
+          data-price="3.90"
+        >
+          <i class="fa fa-cart-plus text-lg text-white"></i>
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+
+    <!--PRODUTO ITEM-->
+    <div class="flex gap-2">
+    <img 
+      src="./assets/9.jpg" 
+      alt="Donuts da Casa"
+      class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+    />
+
+    <div>
+      <p class="font-bold">Donuts da Casa</p>
+      <p class="text-sm">Massa de fermentação natural de chocolate com caramelo.</p>
+      
+      <div class="flex items-center gap-2 justify-between mt-3">
+        <p class="font-bold text-lg">R$ 3.90</p>
+        <button 
+          class="bg-gray-900 px-5 rounded add-to-cart-btn"
+          data-name="Donuts da Casa"
+          data-price="3.90"
+        >
+          <i class="fa fa-cart-plus text-lg text-white"></i>
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+
+        <!--PRODUTO ITEM-->
+        <div class="flex gap-2">
+        <img 
+          src="./assets/10.jpg" 
+          alt="Donuts Caramelo com Morango"
+          class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+        />
+  
+        <div>
+          <p class="font-bold">Donuts Caramelo com Morango</p>
+          <p class="text-sm">Massa de fermentação natural de caramelo com morango.</p>
+          
+          <div class="flex items-center gap-2 justify-between mt-3">
+            <p class="font-bold text-lg">R$ 3.90</p>
+            <button 
+              class="bg-gray-900 px-5 rounded add-to-cart-btn"
+              data-name="Donuts Caramelo com Morango"
+              data-price="3.90"
+            >
+              <i class="fa fa-cart-plus text-lg text-white"></i>
+            </button>
+          </div>
+  
+        </div>
+  
+      </div>
+</main>
+
+<div class="mx-auto max-w-7xl px-2 my-2">
+  <h2 class="font-bold text-3xl">
+    Bebidas
+  </h2>
+</div>
+
+<!--Grid bebidas-->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-10 mx-auto max-w-7xl px-2 mb-16" id="menu">
+
+  <!--PRODUTO ITEM-->
+  <div class="flex gap-2">
+    <img 
+      src="./assets/bebida-1.jpg" 
+      alt="Cerveja Artesanal"
+      class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+    />
+
+    <div>
+      <p class="font-bold">Cerveja Artesanal</p>
+      <p class="text-sm">Cerveja Artesanal feita por nosso mestre cervejeiro</p>
+      
+      <div class="flex items-center gap-2 justify-between mt-3">
+        <p class="font-bold text-lg">R$ 5.90</p>
+        <button 
+          class="bg-gray-900 px-5 rounded add-to-cart-btn"
+          data-name="Cerveja Artesanal"
+          data-price="5.90"
+        >
+          <i class="fa fa-cart-plus text-lg text-white"></i>
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+
+    <!--PRODUTO ITEM-->
+    <div class="flex gap-2">
+      <img 
+        src="./assets/bebida-2.jpg" 
+        alt="Triplo Café"
+        class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+      />
+  
+      <div>
+        <p class="font-bold">Triplo Café</p>
+        <p class="text-sm">Café triplo com chocolate, café e creme.</p>
+        
+        <div class="flex items-center gap-2 justify-between mt-3">
+          <p class="font-bold text-lg">R$ 3.90</p>
+          <button 
+            class="bg-gray-900 px-5 rounded add-to-cart-btn"
+            data-name="Triplo Café"
+            data-price="3.90"
+          >
+            <i class="fa fa-cart-plus text-lg text-white"></i>
+          </button>
+        </div>
+  
+      </div>
+  
+    </div>
+
+      <!--PRODUTO ITEM-->
+  <div class="flex gap-2">
+    <img 
+      src="./assets/bebida-3.jpg" 
+      alt="Café com leite"
+      class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+    />
+
+    <div>
+      <p class="font-bold">Café com leite</p>
+      <p class="text-sm">Café com leite com um toque especial de hortelã.</p>
+      
+      <div class="flex items-center gap-2 justify-between mt-3">
+        <p class="font-bold text-lg">R$ 2.90</p>
+        <button 
+          class="bg-gray-900 px-5 rounded add-to-cart-btn"
+          data-name="Café com leite"
+          data-price="2.90"
+        >
+          <i class="fa fa-cart-plus text-lg text-white"></i>
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+
+    <!--PRODUTO ITEM-->
+    <div class="flex gap-2">
+      <img 
+        src="./assets/bebida-4.jpg" 
+        alt="Chá de Limão"
+        class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+      />
+  
+      <div>
+        <p class="font-bold">Chá de Limão</p>
+        <p class="text-sm">Chá de Limão com hortelã e camomila</p>
+        
+        <div class="flex items-center gap-2 justify-between mt-3">
+          <p class="font-bold text-lg">R$ 3.90</p>
+          <button 
+            class="bg-gray-900 px-5 rounded add-to-cart-btn"
+            data-name="Chá de Limão"
+            data-price="3.90"
+          >
+            <i class="fa fa-cart-plus text-lg text-white"></i>
+          </button>
+        </div>
+  
+      </div>
+  
+    </div>
+
+      <!--PRODUTO ITEM-->
+  <div class="flex gap-2">
+    <img 
+      src="./assets/bebida-5.jpg" 
+      alt="Cerveja Pilsen"
+      class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+    />
+
+    <div>
+      <p class="font-bold">Cerveja Pilsen</p>
+      <p class="text-sm">Cerveja Pilsen feita por nosso mestre cervejeiro</p>
+      
+      <div class="flex items-center gap-2 justify-between mt-3">
+        <p class="font-bold text-lg">R$ 5.90</p>
+        <button 
+          class="bg-gray-900 px-5 rounded add-to-cart-btn"
+          data-name="Cerveja Artesanal"
+          data-price="5.90"
+        >
+          <i class="fa fa-cart-plus text-lg text-white"></i>
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+
+        <!--PRODUTO ITEM-->
+        <div class="flex gap-2">
+          <img 
+            src="./assets/bebida-6.jpg" 
+            alt="Bebida da Casa"
+            class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+          />
+      
+          <div>
+            <p class="font-bold">Bebida da Casa</p>
+            <p class="text-sm">Bebida da Casa feita por nosso mestre cervejeiro</p>
+            
+            <div class="flex items-center gap-2 justify-between mt-3">
+              <p class="font-bold text-lg">R$ 5.90</p>
+              <button 
+                class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                data-name="Bebida da Casa"
+                data-price="5.90"
+              >
+                <i class="fa fa-cart-plus text-lg text-white"></i>
+              </button>
+            </div>
+      
+          </div>
+      
+        </div>
+
+</div>
+
+</div>
+
+<!--Moral card-->
+<div 
+  id="cart-modal"
+  class="bg-black/60 w-full h-full fixed top-0 left-0 z-[99] items-center justify-center hidden"
+  >
+  <div class="bg-white p-5 rounded-md min-w-[90%] md:min-w-[600px]">
+
+    <h2 class="text-center font-bold text-2xl mb-2">Meu carrinho</h2>
+
+     <div id="cart-items" class="flex justify-between~mb-2 flex-col"></div>
+
+     <p class="font-bold">Total: <span id="cart-total">0.00</span></p>
+     <p class="font-bold mt-4">Endereço de entrega:</p>
+     <input 
+       type="text" 
+       placeholder="Digite seu endereço completo..."
+       id="address"
+       class="w-full border-2 p-1 rounded my-1" 
+     />
+     <p class="text-red-500 hidden" id="address-warn">Digite seu endereço completo!</p>
+
+     <div class="flex items-center justify-between mt-5 w-full">
+      <button id="close-modal-btn">Fechar</button>
+      <button id="checkout-btn" class="bg-green-500 text-white px-4 py-1 rounded">Finalizar pedido</button>
+     </div>
+  </div>
+   
+</div>
+
+<section>
+  <div class="w-full flex items-center justify-center">
+    <img 
+    src="./assets/homer.png" 
+    alt="Logo Donuts"
+    class="w-96 h-96 hover:scale-110 duration-200" 
+    />
+  </div>
+</section>
+
+<footer class="w-full bg-red-500 py-2 fixed bottom-0 z-40 flex items-center justify-center">
+  <button 
+    class="flex items-center gap-2 text-white font-bold"
+    id="cart-btn"    
+  >
+    (<span id="cart-count">0</span>)
+    Veja meu carrinho
+    <i class="fa fa-cart-plus text-lg text-white"></i>
+  </button>
+</footer>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+<script src="./js/script.js"></script>
+
+</body>
+</html>

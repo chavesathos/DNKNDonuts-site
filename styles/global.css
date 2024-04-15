@@ -1,6 +1,8 @@
 @import url("./background.css");
 @import url("./header.css");
 @import url("./main.css");
+@import url("./animation.css");
+
 
 * {
   padding: 0;
@@ -10,15 +12,15 @@
 
 :root {
   --text: #EDF1F7;
-  --red: #C51212;
-  --blue: #0041C2;
-  --green: #14B02D;
-  --yellow: #ffc12b;
+  --h1: #f868f8;
+    font-size: 62.5%;
 }
 
-body, .button, a {
+body {
   color: var(--text);
-  font: 400 1rem "Mukta", sans-serif;
+  font: 400 2rem "Madimi One", sans-serif;
+  font-style: normal;
+  background-color: #F6F7F8;
 }
 
 a {
@@ -27,14 +29,4 @@ a {
 
 .button:hover {
   cursor: pointer;
-}
-
-#app {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
 }
